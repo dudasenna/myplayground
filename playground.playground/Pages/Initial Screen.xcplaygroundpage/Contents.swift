@@ -3,12 +3,6 @@
 import UIKit
 import PlaygroundSupport
 
-let initialViewController = InitialViewController()
-public let selection1ViewController = Selection1ViewController()
-public let selection2ViewController = Selection2ViewController()
-public let nameViewController = NameViewController()
-public let homeViewController = HomeViewController()
-
 class InitialViewController : UIViewController {
     override func loadView() {
         let view = UIView()
@@ -38,7 +32,6 @@ class InitialViewController : UIViewController {
     
     
     @objc func tapArrowRight() {
-        print("Apertou botão Arrow R")
         navigationController?.show(selection1ViewController, sender: nil)
     }
     
@@ -49,7 +42,12 @@ class InitialViewController : UIViewController {
 
 
 //let s1vc = Selection1ViewController(screenType: .ipadPro12_9, isPortrait: false)
-let navigation = UINavigationController(rootViewController: initialViewController)
+//let navigation = UINavigationController(rootViewController: initialViewController)
 //let screen = HomeViewController(screenType: .ipadPro12_9, isPortrait: false)
-navigation.preferredContentSize = CGSize(width: 819.6, height: 614.4)
-PlaygroundPage.current.liveView = navigation
+//navigation.preferredContentSize = CGSize(width: 819.6, height: 614.4)
+//PlaygroundPage.current.liveView = navigation
+
+let navigation = UINavigationController(screenType: .ipad, isPortrait: false)
+navigation.navigationBar.isHidden = true
+navigation.pushViewController(InitialViewController(), animated: true)
+PlaygroundPage.current.liveView = navigation.scale(to: 0.4)

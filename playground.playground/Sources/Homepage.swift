@@ -8,25 +8,24 @@ import UIKit
 import PlaygroundSupport
 
 public class HomeViewController : UIViewController {
+    
+    public var monsterHomeImage = UIImage()
+    public let label = UILabel()
+    
     public override func loadView() {
         let view = UIView()
         view.backgroundColor = .white
 
         let customFont = UIFont (name: "Helvetica", size: 32.0)
         
-        let label = UILabel()
+        
         label.frame = CGRect(x: 95, y: 80, width: 189.6, height: 40)
-        label.text = "Scooby"
         label.textColor = .darkGray
         label.font = customFont
         
-        
-        let monster2Image = UIImage(named: "monster2")
-        
-        
         let monster2Button = UIButton()
         monster2Button.frame = CGRect(x: 50, y: 160, width: 200, height: 260)
-        monster2Button.setImage(monster2Image, for: .normal)
+        monster2Button.setImage(monsterHomeImage, for: .normal)
         
         
         view.addSubview(monster2Button)
