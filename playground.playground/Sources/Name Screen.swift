@@ -8,48 +8,56 @@ import PlaygroundSupport
 public class NameViewController : UIViewController {
     
     public var monsterNameImage = UIImage()
-    public let nameTextField = UITextField()
-    
+    public var nameImageView = UIImageView()
+    public var nameMajorColor = UIColor()
+    public var nameMinorColor = UIColor()
+    public var nameTextField = UITextField()
+
     public override func loadView() {
+                
         let view = UIView()
         view.backgroundColor = .white
 
         
         let fontH1 = UIFont (name: "Helvetica", size: 25)
+        let fontH2 = UIFont (name: "Helvetica", size: 20)
         
         
         let arrow_left = UIImage(named: "arrow_left")
 //        let monster2Image = UIImage(named: "monster2")
         
         let label = UILabel()
-        label.frame = CGRect(x: 350, y: 80, width: 300, height: 40)
+        label.frame = CGRect(x: 370, y: 80, width: 300, height: 40)
         label.text = "Como ele vai se chamar?"
-        label.textColor = .darkGray
+        label.textColor = nameMajorColor
         label.font = fontH1
-        
-        
-        nameTextField.frame = CGRect(x: 370, y: 550, width: 250, height: 40)
-        nameTextField.borderStyle = .roundedRect
-        
         
         let arrowLeftButton = UIButton()
         arrowLeftButton.frame = CGRect(x: 50, y: 70, width: 15, height: 27)
         arrowLeftButton.setImage(arrow_left, for: .normal)
         arrowLeftButton.addTarget(nil, action: #selector(tapArrowLeft), for: .touchUpInside)
         
-        let monsterButton = UIButton()
-        monsterButton.frame = CGRect(x: 400, y: 250, width: 200, height: 260)
-        monsterButton.setImage(monsterNameImage, for: .normal)
+        nameImageView.image = monsterNameImage
+        
+        nameTextField.frame = CGRect(x: 380, y: 560, width: 250, height: 40)
+        nameTextField.borderStyle = .roundedRect
+    
         
         let confirmButton = UIButton()
-        confirmButton.frame = CGRect(x: 450, y: 600, width: 50, height: 30)
-        confirmButton.backgroundColor = .darkGray
+        confirmButton.frame = CGRect(x: 480, y: 625, width: 50, height: 30)
+        confirmButton.backgroundColor = .green
+        confirmButton.layer.cornerRadius = 5
+        confirmButton.layer.borderWidth = 1
+        confirmButton.layer.borderColor = UIColor.black.cgColor
         confirmButton.addTarget(nil, action: #selector(tapConfirm), for: .touchUpInside)
+        confirmButton.setTitle ("OK", for: .normal)
+        confirmButton.setTitleColor(UIColor.init(red: 240/255, green: 150/255, blue: 200/255, alpha: 100), for: .normal)
+        confirmButton.titleLabel?.font =  fontH2
         
         
+        view.addSubview(nameImageView)
         view.addSubview(nameTextField)
         view.addSubview(arrowLeftButton)
-        view.addSubview(monsterButton)
         view.addSubview(confirmButton)
         view.addSubview(label)
         self.view = view
@@ -66,6 +74,9 @@ public class NameViewController : UIViewController {
         
         homeViewController.monsterHomeImage = monsterNameImage
         homeViewController.label.text = nameTextField.text!
+        homeViewController.homeImageView = nameImageView
+        homeViewController.homeMajorColor = nameMajorColor
+        homeViewController.homeMinorColor = nameMinorColor
         navigationController?.pushViewController(homeViewController, animated: true)
         
     }

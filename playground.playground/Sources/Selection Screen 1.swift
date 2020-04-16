@@ -6,7 +6,7 @@ import PlaygroundSupport
 
 public let selection1ViewController = Selection1ViewController()
 public let selection2ViewController = Selection2ViewController()
-public let nameViewController = NameViewController()
+//public let nameViewController = NameViewController()
 public let homeViewController = HomeViewController()
 public let arrow_right = UIImage(named: "arrow_right")
 public let arrow_left = UIImage(named: "arrow_left")
@@ -46,55 +46,55 @@ public class Selection1ViewController : UIViewController {
         
         let arrowRightButton = UIButton()
         arrowRightButton.tag = 0
-        arrowRightButton.frame = CGRect(x: 720, y: 315, width: 17, height: 30)
+        arrowRightButton.frame = CGRect(x: 950, y: 400, width: 17, height: 30)
         arrowRightButton.setImage(arrow_right, for: .normal)
         arrowRightButton.addTarget(nil, action: #selector(tapArrowRight), for: .touchUpInside)
         
         let monster1Button = UIButton()
         monster1Button.tag = 1
-        monster1Button.frame = CGRect(x: 50, y: 150, width: 160, height: 160)
+        monster1Button.frame = CGRect(x: 100, y: 140, width: 200, height: 200)
         monster1Button.setImage(monster1Image, for: .normal)
         monster1Button.addTarget(nil, action: #selector(tapMonster), for: .touchUpInside)
         
         let monster2Button = UIButton()
         monster2Button.tag = 2
-        monster2Button.frame = CGRect(x: 240, y: 140, width: 130, height: 160)
+        monster2Button.frame = CGRect(x: 320, y: 140, width: 170, height: 200)
         monster2Button.setImage(monster2Image, for: .normal)
         monster2Button.addTarget(nil, action: #selector(tapMonster), for: .touchUpInside)
         
         let monster3Button = UIButton()
         monster3Button.tag = 3
-        monster3Button.frame = CGRect(x: 410, y: 140, width: 130, height: 160)
+        monster3Button.frame = CGRect(x: 520, y: 140, width: 170, height: 200)
         monster3Button.setImage(monster3Image, for: .normal)
         monster3Button.addTarget(nil, action: #selector(tapMonster), for: .touchUpInside)
         
         let monster4Button = UIButton()
         monster4Button.tag = 4
-        monster4Button.frame = CGRect(x: 570, y: 140, width: 130, height: 160)
+        monster4Button.frame = CGRect(x: 720, y: 140, width: 170, height: 200)
         monster4Button.setImage(monster4Image, for: .normal)
         monster4Button.addTarget(nil, action: #selector(tapMonster), for: .touchUpInside)
         
         let monster5Button = UIButton()
         monster5Button.tag = 5
-        monster5Button.frame = CGRect(x: 50, y: 370, width: 150, height: 150)
+        monster5Button.frame = CGRect(x: 100, y: 370, width: 190, height: 190)
         monster5Button.setImage(monster5Image, for: .normal)
         monster5Button.addTarget(nil, action: #selector(tapMonster), for: .touchUpInside)
         
         let monster6Button = UIButton()
         monster6Button.tag = 6
-        monster6Button.frame = CGRect(x: 250, y: 350, width: 120, height: 170)
+        monster6Button.frame = CGRect(x: 340, y: 350, width: 160, height: 210)
         monster6Button.setImage(monster6Image, for: .normal)
         monster6Button.addTarget(nil, action: #selector(tapMonster), for: .touchUpInside)
         
         let monster7Button = UIButton()
         monster7Button.tag = 7
-        monster7Button.frame = CGRect(x: 415, y: 350, width: 110, height: 160)
+        monster7Button.frame = CGRect(x: 530, y: 350, width: 150, height: 200)
         monster7Button.setImage(monster7Image, for: .normal)
         monster7Button.addTarget(nil, action: #selector(tapMonster), for: .touchUpInside)
         
         let monster8Button = UIButton()
         monster8Button.tag = 8
-        monster8Button.frame = CGRect(x: 560, y: 370, width: 150, height: 150)
+        monster8Button.frame = CGRect(x: 720, y: 370, width: 190, height: 190)
         monster8Button.setImage(monster8Image, for: .normal)
         monster8Button.addTarget(nil, action: #selector(tapMonster), for: .touchUpInside)
         
@@ -120,29 +120,64 @@ public class Selection1ViewController : UIViewController {
     
     @objc func tapMonster(sender: UIButton) {
         
+        let nameViewController = NameViewController()
+        let imageView = UIImageView()
+        
         if sender.tag == 1 {
-            nameViewController.monsterNameImage = monster1Image!
+            nameViewController.monsterNameImage = Monster1.image!
+            nameViewController.nameMajorColor = Monster1.majorColor
+            nameViewController.nameMinorColor = Monster1.minorColor
+            imageView.frame = CGRect(x: 340, y: 190, width: 330, height: 315)
+            nameViewController.nameImageView = imageView
         }
         else if sender.tag == 2 {
-            nameViewController.monsterNameImage = monster2Image!
+            nameViewController.monsterNameImage = Monster2.image!
+            nameViewController.nameMajorColor = Monster2.majorColor
+            nameViewController.nameMinorColor = Monster2.minorColor
+            imageView.frame = CGRect(x: 370, y: 170, width: 265, height: 340)
+            nameViewController.nameImageView = imageView
         }
         else if sender.tag == 3 {
-            nameViewController.monsterNameImage = monster3Image!
+            nameViewController.monsterNameImage = Monster3.image!
+            nameViewController.nameMajorColor = Monster3.majorColor
+            nameViewController.nameMinorColor = Monster3.minorColor
+            imageView.frame = CGRect(x: 375, y: 170, width: 250, height: 330)
+            nameViewController.nameImageView = imageView
         }
         else if sender.tag == 4 {
-            nameViewController.monsterNameImage = monster4Image!
+            nameViewController.monsterNameImage = Monster4.image!
+            nameViewController.nameMajorColor = Monster4.majorColor
+            nameViewController.nameMinorColor = Monster4.minorColor
+            imageView.frame = CGRect(x: 360, y: 170, width: 300, height: 340)
+            nameViewController.nameImageView = imageView
         }
         else if sender.tag == 5 {
-            nameViewController.monsterNameImage = monster5Image!
+            nameViewController.monsterNameImage = Monster5.image!
+            nameViewController.nameMajorColor = Monster5.majorColor
+            nameViewController.nameMinorColor = Monster5.minorColor
+            imageView.frame = CGRect(x: 355, y: 180, width: 310, height: 310)
+            nameViewController.nameImageView = imageView
         }
         else if sender.tag == 6 {
-            nameViewController.monsterNameImage = monster6Image!
+            nameViewController.monsterNameImage = Monster6.image!
+            nameViewController.nameMajorColor = Monster6.majorColor
+            nameViewController.nameMinorColor = Monster6.minorColor
+            imageView.frame = CGRect(x: 390, y: 160, width: 230, height: 340)
+            nameViewController.nameImageView = imageView
         }
         else if sender.tag == 7 {
-            nameViewController.monsterNameImage = monster7Image!
+            nameViewController.monsterNameImage = Monster7.image!
+            nameViewController.nameMajorColor = Monster7.majorColor
+            nameViewController.nameMinorColor = Monster7.minorColor
+            imageView.frame = CGRect(x: 385, y: 160, width: 230, height: 340)
+            nameViewController.nameImageView = imageView
         }
         else if sender.tag == 8 {
-            nameViewController.monsterNameImage = monster8Image!
+            nameViewController.monsterNameImage = Monster8.image!
+            nameViewController.nameMajorColor = Monster8.majorColor
+            nameViewController.nameMinorColor = Monster8.minorColor
+            imageView.frame = CGRect(x: 350, y: 190, width: 300, height: 280)
+            nameViewController.nameImageView = imageView
         }
         
         navigationController?.pushViewController(nameViewController, animated: true)

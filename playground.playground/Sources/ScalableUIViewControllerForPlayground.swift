@@ -1,4 +1,3 @@
-//import Foundation
 import UIKit
 import PlaygroundSupport
 
@@ -58,14 +57,20 @@ extension UIViewController {
         preferredContentSize = size
     }
     
-    public func scale(to scale: Float) -> UIWindow {
+    public func scale(to scale: Float) -> UIView {
+        if let self = self as? UINavigationController {
+            guard let contentSize = self.topViewController?.view.frame.size else {
+                print("Erro: Seu Navigation Controller não possui um View Controller")
+                return UIView()
+            }
+            self.view.frame.size = contentSize == .zero ? view.frame.size : contentSize
+        }
         self.view.transform = CGAffineTransform(scaleX: CGFloat(scale), y: CGFloat(scale))
         self.preferredContentSize = self.view.frame.size
-        let window = UIWindow(frame: CGRect(x: 0, y: 0, width: 770, height: 956))
-        window.backgroundColor = .black
-        window.addSubview(self.view)
-        self.view.center = window.center
-        window.makeKeyAndVisible()
-        return window
+        let rootView = UIView(frame: CGRect(x: 0, y: 0, width: 768, height: 1024))
+        rootView.backgroundColor = .black
+        rootView.addSubview(self.view)
+        self.view.center = rootView.center
+        return rootView
     }
 }

@@ -98,29 +98,64 @@ public class Selection2ViewController : UIViewController {
     
     @objc func tapMonster(sender: UIButton) {
         
+        let nameViewController = NameViewController()
+        let imageView = UIImageView()
+        
         if sender.tag == 9 {
-            nameViewController.monsterNameImage = monster9Image!
+            nameViewController.monsterNameImage = Monster9.image!
+            nameViewController.nameMajorColor = Monster9.majorColor
+            nameViewController.nameMinorColor = Monster9.minorColor
+            imageView.frame = CGRect(x: 370, y: 170, width: 265, height: 340)
+            nameViewController.nameImageView = imageView
         }
         else if sender.tag == 10 {
-            nameViewController.monsterNameImage = monster10Image!
+            nameViewController.monsterNameImage = Monster10.image!
+            nameViewController.nameMajorColor = Monster10.majorColor
+            nameViewController.nameMinorColor = Monster10.minorColor
+            imageView.frame = CGRect(x: 385, y: 160, width: 230, height: 340)
+            nameViewController.nameImageView = imageView
         }
         else if sender.tag == 11 {
-            nameViewController.monsterNameImage = monster11Image!
+            nameViewController.monsterNameImage = Monster11.image!
+            nameViewController.nameMajorColor = Monster11.majorColor
+            nameViewController.nameMinorColor = Monster11.minorColor
+            imageView.frame = CGRect(x: 370, y: 180, width: 280, height: 320)
+            nameViewController.nameImageView = imageView
         }
         else if sender.tag == 12 {
-            nameViewController.monsterNameImage = monster12Image!
+            nameViewController.monsterNameImage = Monster12.image!
+            nameViewController.nameMajorColor = Monster12.majorColor
+            nameViewController.nameMinorColor = Monster12.minorColor
+            imageView.frame = CGRect(x: 370, y: 180, width: 280, height: 340)
+            nameViewController.nameImageView = imageView
         }
         else if sender.tag == 13 {
-            nameViewController.monsterNameImage = monster13Image!
+            nameViewController.monsterNameImage = Monster13.image!
+            nameViewController.nameMajorColor = Monster13.majorColor
+            nameViewController.nameMinorColor = Monster13.minorColor
+            imageView.frame = CGRect(x: 385, y: 180, width: 230, height: 340)
+            nameViewController.nameImageView = imageView
         }
         else if sender.tag == 14 {
-            nameViewController.monsterNameImage = monster14Image!
+            nameViewController.monsterNameImage = Monster14.image!
+            nameViewController.nameMajorColor = Monster14.majorColor
+            nameViewController.nameMinorColor = Monster14.minorColor
+            imageView.frame = CGRect(x: 360, y: 180, width: 310, height: 320)
+            nameViewController.nameImageView = imageView
         }
         else if sender.tag == 15 {
-            nameViewController.monsterNameImage = monster15Image!
+            nameViewController.monsterNameImage = Monster15.image!
+            nameViewController.nameMajorColor = Monster15.majorColor
+            nameViewController.nameMinorColor = Monster15.minorColor
+            imageView.frame = CGRect(x: 375, y: 180, width: 260, height: 340)
+            nameViewController.nameImageView = imageView
         }
         else if sender.tag == 16 {
-            nameViewController.monsterNameImage = monster16Image!
+            nameViewController.monsterNameImage = Monster16.image!
+            nameViewController.nameMajorColor = Monster16.majorColor
+            nameViewController.nameMinorColor = Monster16.minorColor
+            imageView.frame = CGRect(x: 355, y: 180, width: 310, height: 310)
+            nameViewController.nameImageView = imageView
         }
         
         navigationController?.pushViewController(nameViewController, animated: true)

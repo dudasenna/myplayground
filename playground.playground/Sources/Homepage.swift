@@ -10,7 +10,10 @@ import PlaygroundSupport
 public class HomeViewController : UIViewController {
     
     public var monsterHomeImage = UIImage()
-    public let label = UILabel()
+    public var homeImageView = UIImageView()
+    public var homeMajorColor = UIColor()
+    public var homeMinorColor = UIColor()
+    public var label = UILabel()
     
     public override func loadView() {
         let view = UIView()
@@ -23,13 +26,16 @@ public class HomeViewController : UIViewController {
         label.textColor = .darkGray
         label.font = customFont
         
-        let monster2Button = UIButton()
-        monster2Button.frame = CGRect(x: 50, y: 160, width: 200, height: 260)
-        monster2Button.setImage(monsterHomeImage, for: .normal)
+        homeImageView.image = monsterHomeImage
+        
+        let activityButton = UIButton()
+        activityButton.frame = CGRect(x: 300, y: 300, width: 100, height: 50)
+        activityButton.backgroundColor = homeMajorColor
         
         
-        view.addSubview(monster2Button)
         view.addSubview(label)
+        view.addSubview(homeImageView)
+        view.addSubview(activityButton)
         self.view = view
         
     }
