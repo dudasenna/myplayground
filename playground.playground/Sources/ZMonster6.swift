@@ -6,6 +6,10 @@ import PlaygroundSupport
 class Monster6 {
     
     static let image = UIImage(named: "monster6")
+    
+    static let cupIcon = UIImage(named: "cup6")
+    
+    static let hangerIcon = UIImage(named: "hanger6")
     //roxo
     static let majorColor = UIColor(red: 189/255.0, green: 109/255.0, blue: 213/255.0, alpha: 1.0)
     //laranja

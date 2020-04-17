@@ -12,6 +12,8 @@ public class NameViewController : UIViewController {
     public var nameMajorColor = UIColor()
     public var nameMinorColor = UIColor()
     public var nameTextField = UITextField()
+    public var nameCupIcon = UIImage()
+    public var nameHangerIcon = UIImage()
 
     public override func loadView() {
                 
@@ -45,13 +47,13 @@ public class NameViewController : UIViewController {
         
         let confirmButton = UIButton()
         confirmButton.frame = CGRect(x: 480, y: 625, width: 50, height: 30)
-        confirmButton.backgroundColor = .green
-        confirmButton.layer.cornerRadius = 5
-        confirmButton.layer.borderWidth = 1
-        confirmButton.layer.borderColor = UIColor.black.cgColor
+        confirmButton.backgroundColor = nameMajorColor
+        confirmButton.layer.cornerRadius = 15
+//        confirmButton.layer.borderWidth = 0
+//        confirmButton.layer.borderColor = nil
         confirmButton.addTarget(nil, action: #selector(tapConfirm), for: .touchUpInside)
         confirmButton.setTitle ("OK", for: .normal)
-        confirmButton.setTitleColor(UIColor.init(red: 240/255, green: 150/255, blue: 200/255, alpha: 100), for: .normal)
+        confirmButton.setTitleColor(nameMinorColor, for: .normal)
         confirmButton.titleLabel?.font =  fontH2
         
         
@@ -73,10 +75,12 @@ public class NameViewController : UIViewController {
     @objc func tapConfirm() {
         
         homeViewController.monsterHomeImage = monsterNameImage
-        homeViewController.label.text = nameTextField.text!
+        homeViewController.nameLabel.text = nameTextField.text!
         homeViewController.homeImageView = nameImageView
         homeViewController.homeMajorColor = nameMajorColor
         homeViewController.homeMinorColor = nameMinorColor
+        homeViewController.homeCupIcon = nameCupIcon
+        homeViewController.homeHangerIcon = nameHangerIcon
         navigationController?.pushViewController(homeViewController, animated: true)
         
     }

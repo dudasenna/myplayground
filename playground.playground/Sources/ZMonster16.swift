@@ -6,7 +6,10 @@ import PlaygroundSupport
 class Monster16 {
     
     static let image = UIImage(named: "monster16")
-//    image.size
+    
+    static let cupIcon = UIImage(named: "cup16")
+    
+    static let hangerIcon = UIImage(named: "hanger16")
     //rosa
     static let majorColor = UIColor(red: 241/255.0, green: 77/255.0, blue: 128/255.0, alpha: 1.0)
     //amarelo

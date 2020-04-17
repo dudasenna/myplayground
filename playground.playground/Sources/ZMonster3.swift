@@ -6,6 +6,10 @@ import PlaygroundSupport
 class Monster3 {
     
     static let image = UIImage(named: "monster3")
+    
+    static let cupIcon = UIImage(named: "cup3")
+    
+    static let hangerIcon = UIImage(named: "hanger3")
     //verde
     static let majorColor = UIColor(red: 146/255.0, green: 204/255.0, blue: 120/255.0, alpha: 1.0)
     //laranja
